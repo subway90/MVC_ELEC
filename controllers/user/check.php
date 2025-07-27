@@ -18,7 +18,7 @@ $service = new Google_Service_Sheets($client);
 if(isset($_POST['input_name']) && $_POST['input_name']) $input_name = mb_strtolower($_POST['input_name'],'UTF-8');
 // toast error
 else {
-    toast_create('danger','VUI LÒNG NHẬP HỌ VÀ TÊN QUÝ KHÁCH / PLEASE ENTER YOUR FULL NAME');
+    toast_create('danger','VUI LÒNG NHẬP SỐ ĐIỆN THOẠI QUÝ KHÁCH / PLEASE ENTER YOUR PHONE NUMBER');
     route();
 }
 
@@ -28,7 +28,7 @@ $_SESSION['temp']['input'] = $input_name;
 
 
 
-// condition call API : null data OR time query < timenow 60s
+// condition call API : null data OR time query < duration time
 if(empty($_SESSION['data']) || (time() - $_SESSION['temp']['time']) > 30) {
 
     // call API get data from GG Sheet
@@ -64,14 +64,14 @@ foreach ($_SESSION['data'] as $row) {
     $_SESSION['temp']['result'] = null;
     $_SESSION['temp']['roomate'] = null;
     // find input
-    if($input_name === mb_strtolower($row[0],'UTF-8') || $input_name === mb_strtolower($row[1],'UTF-8')) {
+    if($input_name === $row[1]) {
         // save in session temp
         $_SESSION['temp']['result'] = $row;
 
-        // find người ở cùng
+        // find together
         foreach ($_SESSION['data'] as $row_2) {
             // cùng phòng, khác tên
-            if($row_2[4] === $_SESSION['temp']['result'][4] && $row_2[0] !== $_SESSION['temp']['result'][0])
+            if($row_2[4] == $_SESSION['temp']['result'][4] && $row_2[0] !== $_SESSION['temp']['result'][0])
             $_SESSION['temp']['roomate'][] = $row_2;
         }
         // kết thúc vòng lặp find input

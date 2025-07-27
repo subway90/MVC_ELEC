@@ -62,25 +62,32 @@
             <div class="fw-bold">
                 Người ở cùng<span class="mx-1">/</span>Together
             </div>
-            <div class="fw-info fs-4">
-                <?= $_SESSION['temp']['roomate'][0][0]  ?? '<span class="small text-muted fst-italic">không có / none</span>' ?>
+            <div class="fw-info fs-4 text-end">
+                <?php
+                if(!empty($_SESSION['temp']['roomate'])) {
+                    foreach ($_SESSION['temp']['roomate'] as $person) {
+                        echo $person[0].'<br>';
+                    }
+                }
+                else{ ?>
+                    <span class="small text-muted fst-italic">không có / none</span>
+                <?php } ?>
             </div>
         </div>
     </div>
 </div>
 <div class="col-12 text-center mt-4">
-    <div id="continue" class="fw-bold fs-6 text-main text-uppercase img-heading">
+    <div id="continue" class="fw-bold fs-6 text-main text-uppercase">
         <i class="bi bi-chevron-down me-2"></i>Nhấn để xem hoạt động chi tiết
         <div class="">Click to view</div>
     </div>
 </div>
 
-<div class="col-12 col-md-8 col-lg-4 px-2">
-    <img class="w-100 mx-auto rounded-5" src="<?= URL_STORAGE ?>system/timeline.jpg" alt="timeline.jpg">
-</div>
-
-<div class="mt-2">
-    <a href="/feedback" class="bg-main fw-bold btn my-3 px-5">
-        Đánh giá dịch vụ
-</a>
+<div class="col-12 col-md-8 col-lg-4 position-relative mb-4 px-2">
+    <img class="w-100" src="<?= URL_STORAGE ?>system/timeline.jpg" alt="timeline.jpg">
+    <div class="w-100 position-absolute bottom-0 start-25 text-center">
+        <a id="feedback" href="/feedback" class="bg-main fs-6 px-4 fw-bold btn mb-5">
+            Đánh giá dịch vụ
+        </a>
+    </div>
 </div>
