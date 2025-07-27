@@ -1,4 +1,4 @@
-<div class="container d-flex justify-content-center p-3">
+<div class="container d-flex flex-column align-items-center justify-content-center p-3">
     <div class="col-12 col-md-6 col-lg-5 card-result rounded-3 py-5 px-3 px-lg-5 text-center">
         <div class="h4 text-main text-uppercase mb-3">
             Đánh giá thành công / Feedback Successful
@@ -17,6 +17,16 @@
             <div class="text-center mt-1">
                 --- Thank you ---
             </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-5 mt-3">
+        <div class="row px-3 gap-2">
+            <a href="/result" class="btn bg-main d-inline col-12">
+            Xem thông tin / Infomation
+            </a>
+            <a href="/result" class="btn bg-main d-inline col-12">
+                Trang chủ / Home
+            </a>
         </div>
     </div>
 </div>
