@@ -1,0 +1,173 @@
+:root {
+    --primary-color: #0198b0;
+    --main-color : #ddd6a7;
+    --main-color-hover : #f0d97b;
+}
+
+@font-face {
+    font-family: 'E Regular';
+    src: url('/assets/fonts/ELECTROLUXSANSVN-REGULAR.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'E Thin';
+    src: url('/assets/fonts/ELECTROLUXSANSVN-THIN.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'E Bold';
+    src: url('/assets/fonts/ELECTROLUXSANSVN-BOLD.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'E Bold Oblique';
+    src: url('/assets/fonts/ELECTROLUXSANSVN-BOLDOBLIQUE.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'E Oblique';
+    src: url('/assets/fonts/ELECTROLUXSANSVN-OBLIQUE.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'E Demi Bold';
+    src: url('/assets/fonts/ELECTROLUXSANSVN-DEMIBOLD.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'E Light';
+    src: url('/assets/fonts/ELECTROLUXSANSVN-LIGHT.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'E Light Oblique';
+    src: url('/assets/fonts/ELECTROLUXSANSVN-LIGHTOBLIQUE.TTF') format('truetype');
+}
+
+body {
+    background-image: url('/assets/file/system/background.jpg');
+    background-size: cover; /* Để ảnh phủ toàn bộ */
+    background-position: center; /* Căn giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu là 100% chiều cao viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    font-family: 'E Bold', sans-serif;
+    font-weight: normal;
+}
+
+.heading-1 {
+    font-family: 'E Demi Bold', sans-serif;
+    font-size: 44px;
+    font-weight: bold;
+    height: 50px;
+}
+
+
+@media (min-width: 768px) { /* Tablet */
+    .heading-1 {
+        font-size: 55px;
+        height: 70px;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop */
+    .heading-1 {
+        font-size: 66px;
+        height: 88px;
+    }
+}
+
+
+.heading-2 {
+    font-family: 'E Demi Bold', sans-serif;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) { /* Tablet */
+    .heading-2 {
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop */
+    .heading-2 {
+        font-size: 23px;
+    }
+}
+
+.heading-3 {
+    font-family: 'E Demi Bold', sans-serif;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+@media (min-width: 768px) { /* Tablet */
+    .heading-3 {
+        font-size: 21px;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop */
+    .heading-3 {
+        font-size: 25px;
+    }
+}
+
+.text-main {
+    color: var(--main-color)
+}
+
+.bg-main {
+    background-color: var(--main-color);
+}
+
+.bg-main:hover {
+    background-color: var(--main-color-hover);
+}
+
+.section-home {
+    margin-top: 70%;
+}
+
+.card-result {
+    background-color: rgba(231, 231, 231, 0.5); /* Màu nền với độ trong suốt */
+    backdrop-filter: blur(3px);
+}
+
+.fw-info {
+    color: #4e4e4e;
+    font-family : 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+@media (min-width: 768px) { /* Tablet */
+    .section-home {
+        margin-top: 50%;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop */
+    .section-home {
+        margin-top: 25%;
+    }
+}
+
+#continue {
+    animation: bounce 1s infinite;
+    transition: opacity 0.5s ease; /* Thêm hiệu ứng chuyển đổi cho opacity */
+    opacity: 1; /* Đặt opacity ban đầu là 1 */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
