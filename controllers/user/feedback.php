@@ -1,7 +1,9 @@
 <?php
 
 # [HANDLE]
-
+// Nếu chưa check
+if(!isset($_SESSION['temp']['result'])) route();
+// Nếu gửi đánh giá
 if(isset($_POST['sendBtn'])) {
     
     // test_array([
@@ -43,8 +45,8 @@ if(isset($_POST['sendBtn'])) {
     ];
     
     $result = $service->spreadsheets_values->append(SHEET_ID, 'Feedback', $body, $params);
+    toast_create('success','Đánh giá của bạn đã được gửi đi. Cảm ơn đánh giá của bạn ! / Feedback has been send. Thank you for your Feedback !');
     route('result');
-    toast_create('success','Đánh giá của bạn đã được gửi đi / Feedback has been send !');
 }
 
 # [DATA]
