@@ -6,11 +6,6 @@ if(!isset($_SESSION['temp']['result'])) route();
 // Nếu gửi đánh giá
 if(isset($_POST['sendBtn'])) {
     
-    // test_array([
-    //     $_POST,
-    //     $_SESSION['temp']['result'][0],
-    //     date('H:i:s d/m/Y')
-    // ]);
 
     require 'vendor/autoload.php'; // Tải thư viện Google API
 
@@ -32,7 +27,7 @@ if(isset($_POST['sendBtn'])) {
         'values' => [
             [
                 $_SESSION['temp']['result'][0],
-                $_POST['point']+1,
+                $_POST['point'],
                 $_POST['content'],
                 date('H:i:s d/m/Y')
             ]
@@ -45,14 +40,11 @@ if(isset($_POST['sendBtn'])) {
     ];
     
     $result = $service->spreadsheets_values->append(SHEET_ID, 'Feedback', $body, $params);
-    toast_create('success','Đánh giá của bạn đã được gửi đi. Cảm ơn đánh giá của bạn ! / Feedback has been send. Thank you for your Feedback !');
-    route('result');
+    // On bool feedback
+    $_SESSION['bool_feedback'] = true;
+    route('feedback');
 }
 
-# [DATA]
-$data = [
-
-];
-
 # [VIEW]
-view('user','Đánh giá / Feedback','feedback',$data);
+if(isset($_SESSION['bool_feedback'])) view('user','Kết quả đánh giá / Result','result_feedback',null);
+view('user','Đánh giá / Feedback','feedback',null);

@@ -65,6 +65,9 @@ body {
     height: 50px;
 }
 
+.thank {
+    font-family: 'E Oblique', sans-serif;
+}
 
 @media (min-width: 768px) { /* Tablet */
     .heading-1 {
@@ -170,4 +173,12 @@ body {
     60% {
         transform: translateY(-5px);
     }
+}
+
+.color-muted {
+    color: #dddddd;
+}
+
+.color-yellow {
+    color: #f8ca0f;
 }
