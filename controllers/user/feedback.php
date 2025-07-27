@@ -16,7 +16,7 @@ if(isset($_POST['sendBtn'])) {
     $client = new Google_Client();
     $client->setApplicationName('Google Sheets API PHP');
     $client->setScopes(Google_Service_Sheets::SPREADSHEETS);
-    $client->setAuthConfig(SHEET_JSON_FILE); // Đường dẫn tới file JSON xác thực
+    $client->setAuthConfig(SHEET_JSON_FILE);
     $client->setAccessType('offline');
 
     $service = new Google_Service_Sheets($client);
@@ -30,7 +30,7 @@ if(isset($_POST['sendBtn'])) {
         'values' => [
             [
                 $_SESSION['temp']['result'][0],
-                $_POST['point'],
+                $_POST['point']+1,
                 $_POST['content'],
                 date('H:i:s d/m/Y')
             ]
