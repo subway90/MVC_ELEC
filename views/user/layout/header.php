@@ -33,6 +33,6 @@
         Private Event
     </div>
     <div class="heading-2 text-uppercase text-main">
-        Hội nghị thân mật khách hàng
+        Hội nghị khách hàng thân mật
     </div>
 </div>
