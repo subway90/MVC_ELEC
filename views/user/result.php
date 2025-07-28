@@ -25,12 +25,12 @@
 </script>
 
 <div class="container d-flex justify-content-center mt-5">
-    <div class="col-12 col-md-8 col-lg-6 d-flex flex-column gap-3 gap-lg-0 card-result p-3 rounded-4 mb-lg-0 shadow">
+    <div class="col-12 col-md-8 col-lg-6 d-flex flex-column gap-3 gap-lg-0 card-result p-3 rounded-4 mb-lg-0 shadow text-blue">
         <div class="d-flex flex-column flex-lg-row align-items-center justify-content-lg-between">
             <div class="fw-bold">
                 Họ và tên<span class="mx-1">/</span>Full Name
             </div>
-            <div class="fw-info fs-4">
+            <div class="fw-info fs-4 text-blue">
                 <?= $_SESSION['temp']['result'][0] ?>
             </div>
         </div>
@@ -38,31 +38,31 @@
             <div class="fw-bold">
                 Ngày sinh<span class="mx-1">/</span>Date of birth
             </div>
-            <div class="fw-info fs-4">
-            <?= $_SESSION['temp']['result'][2] ?? '<span class="small text-muted fst-italic">(trống)</span>' ?>
+            <div class="fw-info fs-4 text-blue">
+            <?= $_SESSION['temp']['result'][2] ?? '<span class="small fst-italic">(trống)</span>' ?>
             </div>
         </div>
         <div class="d-flex flex-column flex-lg-row align-items-center justify-content-lg-between">
             <div class="fw-bold">
                 Số phòng<span class="mx-1">/</span>No. room
             </div>
-            <div class="fw-info fs-4">
-            <?= $_SESSION['temp']['result'][4] ?? '<span class="small text-muted fst-italic">(trống)</span>' ?>
+            <div class="fw-info fs-4 text-blue">
+            <?= $_SESSION['temp']['result'][4] ?? '<span class="small fst-italic">(trống)</span>' ?>
             </div>
         </div>
         <div class="d-flex flex-column flex-lg-row align-items-center justify-content-lg-between">
             <div class="fw-bold">
                 Loại phòng<span class="mx-1">/</span>Type
             </div>
-            <div class="fw-info fs-4">
-                <?= $_SESSION['temp']['result'][5] ?? '<span class="small text-muted fst-italic">(trống)</span>' ?>
+            <div class="fw-info fs-4 text-blue">
+                <?= $_SESSION['temp']['result'][5] ?? '<span class="small fst-italic">(trống)</span>' ?>
             </div>
         </div>
         <div class="d-flex flex-column flex-lg-row align-items-center justify-content-lg-between">
             <div class="fw-bold">
                 Người ở cùng<span class="mx-1">/</span>Together
             </div>
-            <div class="fw-info fs-4 text-end">
+            <div class="fw-info fs-4 text-blue text-center text-lg-end">
                 <?php
                 if(!empty($_SESSION['temp']['roomate'])) {
                     foreach ($_SESSION['temp']['roomate'] as $person) {
